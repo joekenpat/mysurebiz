@@ -1,0 +1,9 @@
+.ql-container{
+    height: unset;
+}
+#editor{
+    min-height: 200px;
+}
+.ql-editor{
+    max-height: 400px;
+}

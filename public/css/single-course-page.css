@@ -1,0 +1,13 @@
+.view-course .course-info span{
+    padding: 0.2rem 0.4rem;
+    font-size: 0.8rem;
+}
+@media (max-width: 568px){
+    .view-course > div {
+        padding: 0 1.5rem;
+        font-size: 0.9rem;
+    }
+    .view-course h3 {
+        font-size: 1.1rem;
+    }
+}

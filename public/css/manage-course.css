@@ -1,0 +1,20 @@
+.start-date{
+    white-space: nowrap;
+    font-size: 0.8rem;
+}
+@media (max-width: 620px) {
+    .start-date{
+        font-size: 0.7rem;
+    }
+}
+@media (max-width: 567px) {
+    .course-wrapper .my-title, .lessons-wrapper .my-title{
+        font-size: 0.8rem;
+    }
+    .start-date{
+        white-space: unset;
+    }
+    .lesson-index{
+        font-size: 0.8rem;
+    }
+}

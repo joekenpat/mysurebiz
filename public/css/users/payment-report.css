@@ -1,0 +1,16 @@
+.preview-list .preview-item .preview-thumbnail .preview-icon{
+    min-height: unset;
+}
+
+@media (max-width: 450px){
+    .payment-ref, .payment-amount > div, .payment-date {
+        font-size: 0.7rem;
+    }
+    .payment-amount{
+        padding-right: 0;
+        padding-left: 0;
+    }
+    .content-wrapper {
+        padding: 1.5rem 0;
+    }
+}

@@ -1,0 +1,21 @@
+@media (max-width: 567px){
+    .add-course-wrapper h3, .add-course-wrapper h3 i {
+        font-size: 1rem;
+    }
+    .my-check-box-parent{
+        font-size: 0.9rem;
+    }
+    div.add-course-wrapper{
+        padding-right: 1rem !important;
+        padding-left: 1rem !important;
+        padding-top: 1rem !important;
+    }
+}
+@media (max-width: 320px){
+    .add-course-wrapper h3 {
+        font-size: 0.9rem;
+    }
+    .add-course-wrapper h3 i{
+        font-size: 0.8rem;
+    }
+}

@@ -1,0 +1,44 @@
+.bg-success{
+    background-color: unset !important;
+}
+.notifications > div:nth-last-of-type(even){
+    background-color: #f3f4f7;
+}
+
+.notifications div.dropdown-item{
+    display: grid;
+    grid-template-columns: 40px 2fr 1fr;
+    grid-template-rows: 1fr 20px;
+    grid-row-gap: 0.5rem;
+}
+.notifications div.dropdown-item i{
+    position: absolute;
+    right: 0.3rem;
+    top: 0.3rem;
+}
+.icon-trash{
+    cursor: pointer !important;
+}
+.notifications .bus-cat{
+    grid-column: 3;
+    grid-row: 1;
+}
+.notifications .message-date{
+    grid-column: 3;
+    grid-row: 2;
+    font-size: 0.8rem;
+}
+.notifications .preview-thumbnail{
+    grid-column: 1;
+    grid-row: 1/3;
+    justify-self: end;
+    align-self: center;
+}
+.notifications .preview-item-content{
+    grid-column: 2;
+    grid-row: 1/3;
+    align-self: center;
+}
+.notifications ul{
+    padding-top: 1rem;
+}

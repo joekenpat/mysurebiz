@@ -1,0 +1,68 @@
+.header-info{
+    padding: 0 0.5rem;
+    display: flow-root;
+    font-size: 0.8rem;
+}
+.header-info img{
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+}
+.header-info > div:first-child{
+    float: left;
+}
+.header-info > div:last-child{
+    float: right;
+    color: #797978;
+    padding-top: 0.2rem;
+}
+.notifications.preview-list{
+    width: 85% !important;
+    padding-bottom: 0.6rem;
+}
+.preview-list .preview-item:hover {
+    background: unset;
+}
+.message-content img{
+    max-width: 90%;
+    display: block;
+    margin: 0.3rem auto;
+}
+.message-attachment{
+    border-top: solid thin green;
+    position: relative;
+    padding-top: 1.5rem;
+}
+.message-attachment > span:first-child{
+    display: inline-block;
+    font-size: 0.9rem;
+    font-family: cursive;
+    position: absolute;
+    top: -0.9rem;
+    left: 50%;
+    transform: translate(-50%, 0);
+    background-color: green;
+    color: white;
+    padding: 0.1rem 0.7rem;
+    border-radius: 10px;
+}
+.dropdown-item:active,
+.dropdown-item:hover, .dropdown-item:focus{
+    background-color: unset;
+    color: unset;
+}
+.course-material a {
+    color: #ed4037;
+}
+.course-material a:hover{
+    text-decoration: none;
+}
+.course-material:hover {
+    background: #f1f1f1;
+}
+
+@media (max-width: 576px) {
+    .notifications.preview-list{
+        width: 100% !important;
+    }
+}

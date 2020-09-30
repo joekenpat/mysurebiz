@@ -1,0 +1,1 @@
+<div class="text-center w-100">No Training Found!</div>
