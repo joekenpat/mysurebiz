@@ -11,7 +11,6 @@ use Illuminate\Queue\SerializesModels;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
-use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Mail;
 
 class SendMessage implements ShouldQueue
@@ -28,10 +27,10 @@ class SendMessage implements ShouldQueue
      *
      * @return void
      */
-    public function __construct(Allmail $mail)
+    public function __construct(Allmail $mail, $period)
     {
         $this->mail = $mail;
-        $this->period = now();
+        $this->period = $period;
     }
 
     /**
@@ -45,24 +44,13 @@ class SendMessage implements ShouldQueue
     		$this->mail->delete();
     		return;
 	    }
-        // $users = User::whereIn('period', $this->period)->get();
-        $users = User::where('role', 4)->get();
+	    $users = User::whereIn('period', $this->period)->get();
 //	                 ->whereRaw('batch_id IS NOT NULL')->get();
 
-	    // foreach ($users as $user){
-		//     Mail::to($user->email)->later(
-		// 	    new Carbon($this->mail->schedule),
-		//     	new RegularMail($this->mail));
-        // }
-
-        try{
-            foreach ($users as $user){
-                Mail::to($user->email)->send(
-                    new RegularMail($this->mail));
-                    Log::error("mail to ".$user->email);
-            }
-        }catch(\Exception $e){
-            Log::error($e);
-        }
+	    foreach ($users as $user){
+		    Mail::to($user->email)->later(
+			    new Carbon($this->mail->schedule),
+		    	new RegularMail($this->mail));
+	    }
     }
 }

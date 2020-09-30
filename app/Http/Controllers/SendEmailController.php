@@ -92,9 +92,8 @@ class SendEmailController extends Controller implements Base64Interphase
 	    /**
 	     * Dispatch emails
 	     */
-	    // SendMessage::dispatch($mail, $this->request->period)
-        //            ->delay(new Carbon($mail->schedule));
-                   SendMessage::dispatchNow($mail);
+	    SendMessage::dispatch($mail, $this->request->period)
+                   ->delay(new Carbon($mail->schedule));
 
 	    return response()->json(["message" => "Successful"], 201);
     }
