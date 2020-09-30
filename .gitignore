@@ -1,10 +1,9 @@
 /node_modules
 /public/hot
 /public/storage
-# /public/index.php
+/public/index.php
 /public/.htaccess
 /storage/*.key
-/vendor
 /.idea
 /.vscode
 /.vagrant
