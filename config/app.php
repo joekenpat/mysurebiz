@@ -164,6 +164,7 @@ return [
         Unicodeveloper\Paystack\PaystackServiceProvider::class,
 
         KingFlamez\Rave\RaveServiceProvider::class,
+        Queueworker\SansDaemon\SansDaemonServiceProvider::class,
 
     ],
 
