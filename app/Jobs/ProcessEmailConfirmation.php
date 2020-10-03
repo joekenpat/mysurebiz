@@ -39,15 +39,23 @@ class ProcessEmailConfirmation implements ShouldQueue
      */
     public function handle()
     {
-//        Log::info(dd($this->user));
+        Log::info(dd($this->user));
 
-        Mail::to($this->user->email)->send(
-            new EmailConfirmation(
-                $this->user->first_name,
-                route('verify',
-                    ['refcode' => $this->user->ref_code,
-                        'code' => $this->user->email_verification_code])
-            )
-        );
+        try {
+            Mail::to($this->user->email)->send(
+                new EmailConfirmation(
+                    $this->user->first_name,
+                    route(
+                        'verify',
+                        [
+                            'refcode' => $this->user->ref_code,
+                            'code' => $this->user->email_verification_code
+                        ]
+                    )
+                )
+            );
+        } catch (\Exception $e) {
+            Log::error($e);
+        }
     }
 }
