@@ -39,7 +39,7 @@ class ProcessEmailConfirmation implements ShouldQueue
      */
     public function handle()
     {
-        Log::info(dd($this->user));
+        Log::info(var_dump($this->user));
 
         try {
             Mail::to($this->user->email)->send(
@@ -55,7 +55,7 @@ class ProcessEmailConfirmation implements ShouldQueue
                 )
             );
         } catch (\Exception $e) {
-            Log::error($e);
+            Log::error($e->getMessage());
         }
     }
 }
