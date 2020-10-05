@@ -237,7 +237,7 @@ class RegistrationController extends Controller
                 $user
             )->onQueue('high');
 
-            return response()->json(["message" => "Successful"], 201);
+            return response()->json(["message" => "Registration Successful, Verify your email to continue. Kindly check your email Inbox or Spam for verification message."], 201);
         }
         return view('front-end.employee.register');
     }

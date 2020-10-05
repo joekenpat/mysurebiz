@@ -45,7 +45,7 @@ class LoginController extends Controller
             switch ($status){
                 case 0: //Email not verified
                     return Redirect::back()->withErrors([
-                        'message' => 'Email not verified. Kindly check your email for confirmation message.',
+                        'message' => 'Verify your email to continue. Kindly check your email Inbox or Spam for verification message.',
                         'resendemail' => $this->credentials()['email'],
                         'text' => true
                     ]);
@@ -86,7 +86,7 @@ class LoginController extends Controller
         )->onQueue('high');
 
         return Redirect::back()->with([
-            'message' => 'Email verification sent. Check your inbox.'
+            'message' => 'Email verification sent. Kindly check your email Inbox or Spam for verification message'
         ]);
     }
 }
